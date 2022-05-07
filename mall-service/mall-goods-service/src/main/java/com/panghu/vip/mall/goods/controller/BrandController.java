@@ -1,10 +1,13 @@
 package com.panghu.vip.mall.goods.controller;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.panghu.vip.RespResult;
 import com.panghu.vip.mall.goods.model.Brand;
 import com.panghu.vip.mall.goods.service.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * @author 胖虎
@@ -48,5 +51,30 @@ public class BrandController {
     public RespResult delete(@PathVariable(value = "id") String id){
         brandService.removeById(id);
         return RespResult.ok();
+    }
+
+    /**
+     * 批量查询
+     * @param brand
+     * @return
+     */
+    @PostMapping("/search")
+    public RespResult<List<Brand>> search(@RequestBody Brand brand){
+        List<Brand> brands = brandService.queryList(brand);
+        return RespResult.ok(brands);
+    }
+    /**
+     * 批量查询
+     * @param brand
+     * @return
+     */
+    @PostMapping("/pageSearch/{page}/{size}")
+    public RespResult<List<Brand>> pageSearch(
+            @RequestBody Brand brand,
+            @PathVariable(value = "page") Long page,
+            @PathVariable(value = "size") Long size
+            ){
+        Page<Brand> brandPage = brandService.queryPageList(brand, page, size);
+        return RespResult.ok(brandPage);
     }
 }
