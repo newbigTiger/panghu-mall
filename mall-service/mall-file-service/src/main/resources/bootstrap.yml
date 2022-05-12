@@ -1,0 +1,28 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: mall-file
+  cloud:
+    nacos:
+      config:
+        file-extension: yaml
+        server-addr: 43.138.46.118:8848
+      discovery:
+        #Nacos的注册地址
+        server-addr: 43.138.46.118:8848
+  servlet:
+    multipart:
+      enabled: true #开启文件上传
+      max-file-size: 500MB
+      max-request-size: 500MB
+
+minio:
+  url: http://43.138.46.118:9000 #Minio服务所在地址
+  bucketName: mall-goods #存储桶名称
+  accessKey: admin #访问的key
+  secretKey: admin123 #访问的秘钥
+#日志配置
+logging:
+  pattern:
+  console: "%msg%n"

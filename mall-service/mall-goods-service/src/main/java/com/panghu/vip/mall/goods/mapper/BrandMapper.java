@@ -3,6 +3,9 @@ package com.panghu.vip.mall.goods.mapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.panghu.vip.mall.goods.model.Brand;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
  * @author 胖虎
@@ -10,4 +13,7 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface BrandMapper extends BaseMapper<Brand> {
+
+    List<Brand> queryBrandIds(@Param("id") Integer id);
+
 }

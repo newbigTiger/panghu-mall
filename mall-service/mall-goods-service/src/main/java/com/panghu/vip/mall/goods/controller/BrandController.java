@@ -14,7 +14,8 @@ import java.util.List;
  * @date 2022/5/7 下午 7:33
  */
 @RestController
-@RequestMapping(value = "/brand")
+@RequestMapping(value = "/mall-goods/brand")
+@CrossOrigin
 public class BrandController {
 
     @Autowired
@@ -75,6 +76,16 @@ public class BrandController {
             @PathVariable(value = "size") Long size
             ){
         Page<Brand> brandPage = brandService.queryPageList(brand, page, size);
+        return RespResult.ok(brandPage);
+    }
+    /**
+     * 根据分类ID查询品牌集合
+     * @param id
+     * @return
+     */
+    @PostMapping("/queryBrandIds/{id}")
+    public RespResult<List<Brand>> queryBrandIds(@PathVariable(value = "id") Integer id){
+        List<Brand> brandPage = brandService.queryBrandIds(id);
         return RespResult.ok(brandPage);
     }
 }

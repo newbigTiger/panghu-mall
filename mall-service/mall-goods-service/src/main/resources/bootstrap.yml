@@ -8,14 +8,17 @@ spring:
     url: jdbc:mysql://47.98.207.131:3306/shop_goods?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
     username: root
     password: 5475096a
+  redis:
+    host: 47.98.207.131
+    port: 6379
   cloud:
     nacos:
       config:
         file-extension: yaml
-        server-addr: 47.98.207.131:8848
+        server-addr: 43.138.46.118:8848
       discovery:
         #Nacos的注册地址
-        server-addr: 47.98.207.131:8848
+        server-addr: 43.138.46.118:8848
 # ====================MybatisPlus====================
 mybatis-plus:
   mapper-locations: mapper/*.xml

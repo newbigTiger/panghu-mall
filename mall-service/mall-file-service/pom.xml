@@ -3,24 +3,20 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>panghu-mall</artifactId>
+        <artifactId>mall-service</artifactId>
         <groupId>com.panghu</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <packaging>pom</packaging>
-    <modules>
-        <module>mall-goods-api</module>
-    </modules>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>mall-api</artifactId>
+    <artifactId>mall-file-service</artifactId>
     <description>
-        所有数据库对应的Bean和Feign接口
+        文件上传和文件下载
     </description>
     <dependencies>
         <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>3.3.0</version>
+            <groupId>io.minio</groupId>
+            <artifactId>minio</artifactId>
+            <version>7.1.0</version>
         </dependency>
     </dependencies>
 

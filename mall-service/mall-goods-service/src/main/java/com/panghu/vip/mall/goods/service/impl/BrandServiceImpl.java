@@ -40,4 +40,10 @@ public class BrandServiceImpl extends ServiceImpl<BrandMapper, Brand> implements
         return (Page<Brand>) brandMapper.selectPage(new Page<Brand>(current,size),queryWrapper);
     }
 
+    @Override
+    public List<Brand> queryBrandIds(Integer id) {
+
+        return brandMapper.queryBrandIds(id);
+    }
+
 }
