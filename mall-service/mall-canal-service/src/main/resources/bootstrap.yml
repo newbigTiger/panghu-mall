@@ -1,0 +1,24 @@
+server:
+  prot: 8083
+canal:
+  destination: example
+  server: 47.98.207.131:11111
+spring:
+  application:
+    name: mall-canal
+  cloud:
+    nacos:
+      config:
+        file-extension: yaml
+        server-addr: 43.138.46.118:8848
+      discovery:
+        #Nacos的注册地址
+        server-addr: 43.138.46.118:8848
+#日志配置
+logging:
+  pattern:
+    console: "%msg%n"
+  level:
+    root: error
+
+

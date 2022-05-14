@@ -25,4 +25,4 @@ minio:
 #日志配置
 logging:
   pattern:
-  console: "%msg%n"
+    console: "%msg%n"

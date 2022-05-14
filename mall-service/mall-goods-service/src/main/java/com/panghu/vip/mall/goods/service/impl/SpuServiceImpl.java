@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -46,7 +47,7 @@ public class SpuServiceImpl extends ServiceImpl<SpuMapper, Spu> implements SpuSe
         spu.setStatus(1);
         spuMapper.insert(spu);
         List<Sku> skus = product.getSkus();
-        LocalDateTime localDate = LocalDateTime.now();
+        Date localDate = new Date();
         Category category = categoryMapper.selectById(spu.getCategoryThreeId());
         Brand brand = brandMapper.selectById(spu.getBrandId());
         skus.stream().forEach(item -> {

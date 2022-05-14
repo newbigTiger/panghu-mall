@@ -32,9 +32,9 @@ public class SkuController {
      * @return
      */
     @GetMapping("/aditems/type")
-    public RespResult<List<Sku>> typeItems(@RequestParam("id")Integer id) {
+    public List<Sku> typeItems(@RequestParam("id")Integer id) {
         List<Sku> skus = skuService.typeSkuItems(id);
-        return RespResult.ok(skus);
+        return skus;
     }
 
     @GetMapping("/deleteItems")
