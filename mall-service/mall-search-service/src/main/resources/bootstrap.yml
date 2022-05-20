@@ -1,8 +1,8 @@
 server:
-  prot: 8083
+  port: 8084
 spring:
   application:
-    name: mall-canal
+    name: mall-search
   cloud:
     nacos:
       config:
@@ -11,18 +11,9 @@ spring:
       discovery:
         #Nacos的注册地址
         server-addr: 43.138.46.118:8848
-canal:
-  server: 47.98.207.131:11111
-  destination: example
-  batch-size: 1000
-ribbon:
-  ReadTimeout: 60000
-  ConnectTimeout: 60000
-#日志配置
+  elasticsearch:
+    rest:
+      uris: http://43.138.46.118:9200
 logging:
   pattern:
     console: "%msg%n"
-  level:
-    root: error\
-
-

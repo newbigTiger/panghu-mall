@@ -14,7 +14,7 @@ import java.util.List;
  * @date 2022/5/12 下午 3:32
  */
 @FeignClient(value = "mall-goods")//服务名称
-@RequestMapping("sku")
+@RequestMapping("/mall-goods/sku")
 public interface SkuFeign {
     /**
      * 根据推广分类查询产品

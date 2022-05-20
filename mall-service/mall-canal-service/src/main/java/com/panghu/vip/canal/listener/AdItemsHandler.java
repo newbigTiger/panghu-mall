@@ -24,12 +24,13 @@ public class AdItemsHandler implements EntryHandler<AdItems> {
     @Override
     public void update(AdItems before, AdItems after) {
         //分类不同，则重新加载之前的缓存
-        if (before.getType().intValue() != after.getType().intValue()) {
+        if (null!=before.getType() && before.getType().intValue() != after.getType().intValue()) {
             //修改缓存
             skuFeign.updateTypeSkuItems(before.getType());
+        }else {
+            //加载缓存
+            skuFeign.updateTypeSkuItems(after.getType());
         }
-        //加载缓存
-        skuFeign.updateTypeSkuItems(after.getType());
     }
 
     @Override

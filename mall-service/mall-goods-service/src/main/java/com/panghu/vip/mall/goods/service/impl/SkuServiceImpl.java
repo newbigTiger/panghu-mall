@@ -83,6 +83,9 @@ public class SkuServiceImpl extends ServiceImpl<SkuMapper, Sku> implements SkuSe
         List<AdItems> adItems = adItemsMapper.selectList(adItemsQueryWrapper);
         //2.根据推广列表查询产品信息
         List<String> skuIds = adItems.stream().map(item -> item.getSkuId()).collect(Collectors.toList());
+        if(CollectionUtils.isEmpty(skuIds)){
+            return Collections.emptyList();
+        }
         List<Sku> skus = skuMapper.selectBatchIds(skuIds);
         return CollectionUtils.isEmpty(skus) ? Collections.emptyList() : skus;
     }
