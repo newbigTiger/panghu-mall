@@ -3,10 +3,9 @@ package com.panghu.vip.mall.search.feign;
 import com.panghu.vip.RespResult;
 import com.panghu.vip.mall.search.model.SkuEs;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 /**
  * @author 胖虎
@@ -15,6 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @FeignClient(value = "mall-search")
 @RequestMapping("/search")
 public interface SkuSearchFeign {
+
+    @GetMapping("/search")
+    public RespResult<Map> search(@RequestParam Map<String, Object> searchMap);
 
     @PostMapping("/add")
     RespResult add(@RequestBody SkuEs skuEs);

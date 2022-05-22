@@ -1,10 +1,11 @@
 package com.panghu.vip.mall.search.service.impl;
 
+import com.panghu.vip.PageInfo;
+import org.springframework.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.panghu.vip.mall.search.mapper.SkuSearchMapper;
 import com.panghu.vip.mall.search.model.SkuEs;
 import com.panghu.vip.mall.search.service.SkuSearchService;
-import org.apache.commons.lang.StringUtils;
 import org.elasticsearch.index.query.BoolQueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.aggregations.Aggregation;
@@ -22,7 +23,6 @@ import org.springframework.data.elasticsearch.core.aggregation.AggregatedPage;
 import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilder;
 import org.springframework.stereotype.Service;
 
-import javax.swing.*;
 import java.util.*;
 
 /**
@@ -72,6 +72,10 @@ public class SkuSearchServiceImpl implements SkuSearchService {
         resultMap.put("totalElements", search.getTotalElements());
         resultMap.put("totalPages", search.getTotalPages());
         resultMap.putAll(stringObjectMap);
+        //创建分页对象
+        int currentpage = queryBuilder.build().getPageable().getPageNumber()+1;
+        PageInfo pageInfo= new PageInfo(search.getTotalElements(),currentpage,5);
+        resultMap.put("pageInfo",pageInfo);
         return resultMap;
     }
 
@@ -129,30 +133,32 @@ public class SkuSearchServiceImpl implements SkuSearchService {
         if (searchMap != null && searchMap.size() != 0) {
             //根据名称模糊查询
             Object keywords = searchMap.get("keywords");
-            if (Objects.nonNull(keywords)) {
+            if (!StringUtils.isEmpty(keywords)) {
                 boolQueryBuilder.must(QueryBuilders.termQuery("name", keywords.toString()));
             }
             //根据分类查询
             Object category = searchMap.get("category");
-            if (Objects.nonNull(category)) {
+            if (!StringUtils.isEmpty(category)) {
                 boolQueryBuilder.must(QueryBuilders.termQuery("categoryName", category.toString()));
             }
             //品牌查询
             Object brand = searchMap.get("brand");
-            if (Objects.nonNull(brand)) {
+            if (!StringUtils.isEmpty(brand)) {
                 boolQueryBuilder.must(QueryBuilders.termQuery("brandName", brand.toString()));
             }
             //价格区间
             Object price = searchMap.get("price");
-            if (Objects.nonNull(price)) {
+            if (!StringUtils.isEmpty(price)) {
                 String[] prices = price.toString().replace("元", "").replace("以上", "").split("-");
                 //price大于第一个参数
-                boolQueryBuilder.must(QueryBuilders.rangeQuery("price").gt(Integer.valueOf(prices[0])));
+
                 //price小于第二个参数
                 if (prices.length == 2) {
-                    boolQueryBuilder.must(QueryBuilders.rangeQuery("price").lte(Integer.valueOf(prices[1])));
+                    boolQueryBuilder.must(QueryBuilders.rangeQuery("price").from(Integer.valueOf(prices[0]),false)
+                            .to(Integer.valueOf(prices[1]),true));
+                }else{
+                    boolQueryBuilder.must(QueryBuilders.rangeQuery("price").gt(Integer.valueOf(prices[0])));
                 }
-                boolQueryBuilder.must(QueryBuilders.termQuery("brandName", price.toString()));
             }
             searchMap.forEach((k, v) -> {
                 if (k.startsWith("attr_")) {
@@ -162,13 +168,12 @@ public class SkuSearchServiceImpl implements SkuSearchService {
                 }
 
             });
-
-            queryBuilder.withQuery(boolQueryBuilder);
-            Object field = searchMap.get("field");
+             queryBuilder.withQuery(boolQueryBuilder);
+            Object sfield = searchMap.get("sfield");
             Object sm = searchMap.get("sm");
-            if (Objects.nonNull(field) && Objects.nonNull(sm)) {
+            if (!StringUtils.isEmpty(sfield) && !StringUtils.isEmpty(sm)) {
                 queryBuilder.withSort(SortBuilders
-                        .fieldSort(field.toString())
+                        .fieldSort(sfield.toString())
                         .order(SortOrder.valueOf(sm.toString())));
             }
         }
@@ -187,7 +192,7 @@ public class SkuSearchServiceImpl implements SkuSearchService {
 
     public void group(NativeSearchQueryBuilder queryBuilder, Map<String, Object> searchMap) {
         //用户如果没有输入分类条件，需要将分类搜索出来作为条件提供给用户
-        if (searchMap == null || Objects.isNull(searchMap.get("category"))) {
+        if (searchMap == null || StringUtils.isEmpty((searchMap.get("category")))) {
             queryBuilder.addAggregation(
                     AggregationBuilders
                             .terms("categoryList")//用哪个别名接收
@@ -196,7 +201,7 @@ public class SkuSearchServiceImpl implements SkuSearchService {
             );
         }
         //如果用户没有输入品牌,需要将品牌搜索出来作为条件提供给用户
-        if (searchMap == null || Objects.isNull(searchMap.get("brand"))) {
+        if (searchMap == null || StringUtils.isEmpty(searchMap.get("brand"))) {
             queryBuilder.addAggregation(
                     AggregationBuilders
                             .terms("brandList")//用哪个别名接收
@@ -221,7 +226,7 @@ public class SkuSearchServiceImpl implements SkuSearchService {
     public void add(SkuEs skuEs) {
         //获取属性
         String skuAttribute = skuEs.getSkuAttribute();
-        if (StringUtils.isNotBlank(skuAttribute)) {
+        if (!StringUtils.isEmpty(skuAttribute)) {
             skuEs.setAttrMap(JSON.parseObject(skuAttribute, Map.class));
         }
         //填充map中

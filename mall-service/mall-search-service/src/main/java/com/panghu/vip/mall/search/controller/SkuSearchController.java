@@ -20,14 +20,14 @@ public class SkuSearchController {
     @Autowired
     private SkuSearchService skuSearchService;
 
-
     /**
      * 商品搜索
+     *
      * @param searchMap
      * @return
      */
     @GetMapping("/search")
-    public RespResult<Map> search(@RequestParam Map<String,Object> searchMap){
+    public RespResult<Map> search(@RequestParam Map<String, Object> searchMap) {
         Map<String, Object> search = skuSearchService.search(searchMap);
         return RespResult.ok(search);
     }
