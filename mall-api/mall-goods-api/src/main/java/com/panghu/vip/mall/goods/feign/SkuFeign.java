@@ -4,6 +4,7 @@ import com.panghu.vip.RespResult;
 import com.panghu.vip.mall.goods.model.Sku;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -16,6 +17,9 @@ import java.util.List;
 @FeignClient(value = "mall-goods")//服务名称
 @RequestMapping("/mall-goods/sku")
 public interface SkuFeign {
+
+    @GetMapping(value = "/{id}")
+    public RespResult<Sku> one(@PathVariable("id")String id);
     /**
      * 根据推广分类查询产品
      *

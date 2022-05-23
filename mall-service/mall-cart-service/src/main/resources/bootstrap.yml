@@ -1,0 +1,25 @@
+server:
+  port: 8087
+spring:
+  application:
+    name: mall-cart-service
+  cloud:
+    nacos:
+      config:
+        file-extension: yaml
+        server-addr: 43.138.46.118:8848
+      discovery:
+        #Nacos的注册地址
+        server-addr: 43.138.46.118:8848
+  data:
+    mongodb:
+      uri: mongodb://sh:123456@43.138.46.118:27017/shop
+  main:
+    allow-bean-definition-overriding: true
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
+#日志配置
+logging:
+  pattern:
+    console: "%msg%n"

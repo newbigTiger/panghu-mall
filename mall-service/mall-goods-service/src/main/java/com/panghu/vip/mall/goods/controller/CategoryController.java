@@ -24,10 +24,23 @@ public class CategoryController {
     @Autowired
     private CategoryService categoryService;
 
-    @GetMapping(value = "/findByParentId/{id}")
+    /**
+     * 根据分类父id查询子类
+     * @param id
+     * @return
+     */
+    @GetMapping(value = "/parent/{id}")
     public RespResult<List<Category>> findByParentId(@PathVariable("id")Integer id){
 
         return RespResult.ok(categoryService.findByParentId(id));
+    }
+    /**
+     * 根据分类查询分类信息
+     */
+    @GetMapping(value="/{id}")
+    public RespResult<Category> one(@PathVariable(value = "id")Integer id){
+        Category category = categoryService.getById(id);
+        return RespResult.ok(category);
     }
 
 }

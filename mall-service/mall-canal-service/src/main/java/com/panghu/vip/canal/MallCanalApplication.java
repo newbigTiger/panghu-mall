@@ -11,7 +11,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  */
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 @EnableFeignClients(basePackages =
-        {"com.panghu.vip.mall.goods.feign","com.panghu.vip.mall.search.feign"})
+        {"com.panghu.vip.mall.goods.feign","com.panghu.vip.mall.search.feign","com.panghu.vip.mall.page.feign"})
 public class MallCanalApplication {
     public static void main(String[] args) {
         SpringApplication.run(MallCanalApplication.class, args);

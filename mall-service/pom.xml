@@ -14,6 +14,8 @@
         <module>mall-file-service</module>
         <module>mall-canal-service</module>
         <module>mall-search-service</module>
+        <module>mall-cart-service</module>
+        <module>mall-user-service</module>
     </modules>
     <artifactId>mall-service</artifactId>
     <description>
@@ -31,6 +33,12 @@
             <groupId>com.panghu</groupId>
             <artifactId>mall-common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <!-- alibaba的druid数据库连接池 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.1.21</version>
         </dependency>
     </dependencies>
 </project>

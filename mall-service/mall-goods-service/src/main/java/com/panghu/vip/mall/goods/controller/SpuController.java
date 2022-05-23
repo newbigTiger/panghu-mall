@@ -34,5 +34,11 @@ public class SpuController {
         spuService.save(product);
         return RespResult.ok();
     }
+
+    @GetMapping("/product/{id}")
+    public RespResult<Product> one(@PathVariable(value = "id")String id){
+        Product bySpuId = spuService.findBySpuId(id);
+        return RespResult.ok(bySpuId);
+    }
 }
 

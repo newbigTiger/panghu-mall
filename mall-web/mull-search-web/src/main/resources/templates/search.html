@@ -678,20 +678,23 @@
             <div class="sui-navbar">
                 <div class="navbar-inner filter">
                     <ul class="sui-nav">
-                        <li class="active">
+                        <li th:class="${#strings.indexOf(url,'sfield')==-1?'active':''}">
                             <a href="#">综合</a>
                         </li>
                         <li>
                             <a href="#">销量</a>
                         </li>
-                        <li>
-                            <a href="#">新品</a>
+                        <li th:class="${#strings.indexOf(url,'updateTime')!=-1?'active':''}">
+                            <a th:href="@{${sortUrl}(sfield='updateTime',sm='DESC')}">新品</a>
                         </li>
                         <li>
                             <a href="#">评价</a>
                         </li>
-                        <li>
-                            <a href="#">价格</a>
+                        <li  th:class="${#strings.indexOf(url,'price')!=-1 && #strings.indexOf(url,'ASC')!=-1?'active':''}">
+                            <a th:href="@{${sortUrl}(sfield='price',sm='ASC')}">价格-</a>
+                        </li>
+                        <li th:class="${#strings.indexOf(url,'price')!=-1 && #strings.indexOf(url,'DESC')!=-1?'active':''}">
+                            <a th:href="@{${sortUrl}(sfield='price',sm='DESC')}">价格+</a>
                         </li>
                     </ul>
                 </div>

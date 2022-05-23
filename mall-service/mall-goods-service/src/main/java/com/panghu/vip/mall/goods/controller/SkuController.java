@@ -26,6 +26,13 @@ public class SkuController {
     @Autowired
     private SkuService skuService;
 
+    @GetMapping(value = "/{id}")
+    public RespResult<Sku> one(@PathVariable("id")String id){
+
+        Sku byId = skuService.getById(id);
+        return RespResult.ok(byId);
+    }
+
     /**
      * 根据推广分类查询产品
      * @param id

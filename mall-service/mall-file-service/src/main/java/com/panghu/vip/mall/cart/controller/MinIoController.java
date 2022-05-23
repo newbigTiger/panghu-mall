@@ -1,4 +1,4 @@
-package com.panghu.vip.mall.controller;
+package com.panghu.vip.mall.cart.controller;
 
 import com.panghu.vip.mall.config.MinIoProperties;
 import com.panghu.vip.mall.config.MinIoUtil;

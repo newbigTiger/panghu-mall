@@ -1,6 +1,7 @@
 package com.panghu.vip.mall.goods.service.impl;
 
 import com.alibaba.fastjson.JSON;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.panghu.vip.mall.goods.mapper.BrandMapper;
 import com.panghu.vip.mall.goods.mapper.CategoryMapper;
@@ -11,7 +12,6 @@ import com.panghu.vip.mall.goods.service.SpuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -69,5 +69,27 @@ public class SpuServiceImpl extends ServiceImpl<SpuMapper, Spu> implements SpuSe
             item.setStatus(spu.getStatus());
         });
         skuService.saveBatch(skus);
+    }
+
+    /**
+     * 根据spuId查询product
+     *
+     * @param id
+     * @return
+     */
+    @Override
+    public Product findBySpuId(String id) {
+        //查询spu
+        Spu spu = spuMapper.selectById(id);
+        //查询spu对应的sku集合
+        QueryWrapper<Sku> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("spu_id", spu.getId());
+        List<Sku> skuList = skuService.list(queryWrapper);
+        //创建一个product
+        Product product = new Product();
+        product.setSpu(spu);
+        product.setSkus(skuList);
+
+        return product;
     }
 }

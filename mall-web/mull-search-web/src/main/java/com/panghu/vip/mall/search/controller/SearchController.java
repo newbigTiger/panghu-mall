@@ -31,6 +31,7 @@ public class SearchController {
         model.addAttribute("result", mapRespResult.getData());
         model.addAttribute("searchMap", searchMap);
         model.addAttribute("url", UrlUtils.map2url("/web/search",searchMap,"page"));
+        model.addAttribute("sortUrl", UrlUtils.map2url("/web/search",searchMap,"page","sm","sfield"));
         return "search";
     }
 }

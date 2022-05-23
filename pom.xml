@@ -11,6 +11,7 @@
         <module>mall-service</module>
         <module>mall-util</module>
         <module>mall-web</module>
+        <module>mall-usr-api</module>
     </modules>
     <name>panghu-mall</name>
     <packaging>pom</packaging>

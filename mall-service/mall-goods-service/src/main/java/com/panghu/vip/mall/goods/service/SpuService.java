@@ -16,6 +16,6 @@ public interface SpuService extends IService<Spu> {
 
     public void save(Product product);
 
-
+    public Product findBySpuId(String id);
 
 }

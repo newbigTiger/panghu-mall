@@ -33,7 +33,7 @@ public class MybatisCode {
             mpg.setGlobalConfig(gc);
             // 数据源配置
             DataSourceConfig dsc = new DataSourceConfig();
-            dsc.setUrl("jdbc:mysql://47.98.207.131:3306/shop_goods? useUnicode=true&useSSL=false&characterEncoding=utf8");
+            dsc.setUrl("jdbc:mysql://47.98.207.131:3306/shop_user? useUnicode=true&useSSL=false&characterEncoding=utf8");
             dsc.setDriverName("com.mysql.jdbc.Driver");
             dsc.setUsername("root");
             dsc.setPassword("5475096a");

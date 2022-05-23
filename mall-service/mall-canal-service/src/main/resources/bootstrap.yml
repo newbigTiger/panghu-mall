@@ -11,6 +11,8 @@ spring:
       discovery:
         #Nacos的注册地址
         server-addr: 43.138.46.118:8848
+  main:
+    allow-bean-definition-overriding: true
 canal:
   server: 47.98.207.131:11111
   destination: example
