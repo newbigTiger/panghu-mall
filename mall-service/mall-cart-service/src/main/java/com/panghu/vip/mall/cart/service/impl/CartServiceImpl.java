@@ -6,7 +6,7 @@ import com.panghu.vip.mall.cart.mapper.CartMapper;
 import com.panghu.vip.mall.cart.model.Cart;
 import com.panghu.vip.mall.cart.service.CartService;
 import com.panghu.vip.mall.goods.feign.SkuFeign;
-import com.panghu.vip.mall.order.model.Sku;
+import com.panghu.vip.mall.goods.model.Sku;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Sort;

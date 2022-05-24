@@ -1,7 +1,7 @@
 package com.panghu.vip.mall.goods.service;
 
-import com.panghu.vip.mall.order.model.Product;
-import com.panghu.vip.mall.order.model.Spu;
+import com.panghu.vip.mall.goods.model.Product;
+import com.panghu.vip.mall.goods.model.Spu;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

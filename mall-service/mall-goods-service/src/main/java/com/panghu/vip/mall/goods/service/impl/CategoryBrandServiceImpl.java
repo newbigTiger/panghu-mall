@@ -1,6 +1,6 @@
 package com.panghu.vip.mall.goods.service.impl;
 
-import com.panghu.vip.mall.order.model.CategoryBrand;
+import com.panghu.vip.mall.goods.model.CategoryBrand;
 import com.panghu.vip.mall.goods.mapper.CategoryBrandMapper;
 import com.panghu.vip.mall.goods.service.CategoryBrandService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

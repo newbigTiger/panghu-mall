@@ -1,4 +1,4 @@
-package com.panghu.vip.mall.order.model;
+package com.panghu.vip.mall.goods.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

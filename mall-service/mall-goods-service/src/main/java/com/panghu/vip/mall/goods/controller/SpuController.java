@@ -2,7 +2,7 @@ package com.panghu.vip.mall.goods.controller;
 
 
 import com.panghu.vip.RespResult;
-import com.panghu.vip.mall.order.model.Product;
+import com.panghu.vip.mall.goods.model.Product;
 import com.panghu.vip.mall.goods.service.SpuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

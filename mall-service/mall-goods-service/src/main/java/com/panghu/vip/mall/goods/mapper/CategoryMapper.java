@@ -1,6 +1,6 @@
 package com.panghu.vip.mall.goods.mapper;
 
-import com.panghu.vip.mall.order.model.Category;
+import com.panghu.vip.mall.goods.model.Category;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 

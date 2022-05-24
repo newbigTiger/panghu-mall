@@ -2,7 +2,7 @@ package com.panghu.vip.mall.goods.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.panghu.vip.mall.goods.mapper.SkuAttributeMapper;
-import com.panghu.vip.mall.order.model.SkuAttribute;
+import com.panghu.vip.mall.goods.model.SkuAttribute;
 import com.panghu.vip.mall.goods.service.SkuAttributeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

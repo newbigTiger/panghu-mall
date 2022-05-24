@@ -1,4 +1,4 @@
-package com.panghu.vip.mall.order.model;
+package com.panghu.vip.mall.goods.model;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -16,30 +16,17 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class SkuAttribute implements Serializable {
+public class CategoryAttr implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    /**
-     * ID
-     */
-    @TableId(value = "id", type = IdType.AUTO)
-    private Integer id;
+    @TableId(value = "category_id", type = IdType.NONE)
+    private Integer categoryId;
 
     /**
-     * 属性名称
+     * 属性分类表
      */
-    private String name;
-
-    /**
-     * 属性选项
-     */
-    private String options;
-
-    /**
-     * 排序
-     */
-    private Integer sort;
+    private Integer attrId;
 
 
 }

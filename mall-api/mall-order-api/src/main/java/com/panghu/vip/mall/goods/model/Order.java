@@ -1,4 +1,4 @@
-package com.panghu.vip.mall.order.model;
+package com.panghu.vip.mall.goods.model;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import java.time.LocalDateTime;

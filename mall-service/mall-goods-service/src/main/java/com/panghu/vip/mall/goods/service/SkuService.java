@@ -1,6 +1,6 @@
 package com.panghu.vip.mall.goods.service;
 
-import com.panghu.vip.mall.order.model.Sku;
+import com.panghu.vip.mall.goods.model.Sku;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.util.List;

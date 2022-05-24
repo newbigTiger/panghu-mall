@@ -2,7 +2,7 @@ package com.panghu.vip.mall.goods.service;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.panghu.vip.mall.order.model.Brand;
+import com.panghu.vip.mall.goods.model.Brand;
 
 import java.util.List;
 
