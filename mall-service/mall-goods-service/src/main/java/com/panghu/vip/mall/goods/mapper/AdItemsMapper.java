@@ -1,7 +1,7 @@
 package com.panghu.vip.mall.goods.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.panghu.vip.mall.goods.model.AdItems;
+import com.panghu.vip.mall.order.model.AdItems;
 import org.apache.ibatis.annotations.Mapper;
 
 /**

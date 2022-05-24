@@ -1,7 +1,7 @@
 package com.panghu.vip.mall.goods.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.panghu.vip.mall.goods.model.Category;
+import com.panghu.vip.mall.order.model.Category;
 import com.panghu.vip.mall.goods.mapper.CategoryMapper;
 import com.panghu.vip.mall.goods.service.CategoryService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

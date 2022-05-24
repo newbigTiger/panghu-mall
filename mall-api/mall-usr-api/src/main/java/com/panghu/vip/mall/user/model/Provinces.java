@@ -1,4 +1,4 @@
-package com.panghu.vip.mall.model;
+package com.panghu.vip.mall.user.model;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -8,7 +8,7 @@ import lombok.EqualsAndHashCode;
 
 /**
  * <p>
- * 行政区域地州市信息表
+ * 省份信息表
  * </p>
  *
  * @author 胖虎
@@ -16,25 +16,20 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class Cities implements Serializable {
+public class Provinces implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     /**
-     * 城市ID
-     */
-    @TableId(value = "cityid", type = IdType.NONE)
-    private String cityid;
-
-    /**
-     * 城市名称
-     */
-    private String city;
-
-    /**
      * 省份ID
      */
+    @TableId(value = "provinceid", type = IdType.NONE)
     private String provinceid;
+
+    /**
+     * 省份名称
+     */
+    private String province;
 
 
 }

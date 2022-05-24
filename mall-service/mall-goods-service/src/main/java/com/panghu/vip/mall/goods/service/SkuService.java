@@ -1,6 +1,6 @@
 package com.panghu.vip.mall.goods.service;
 
-import com.panghu.vip.mall.goods.model.Sku;
+import com.panghu.vip.mall.order.model.Sku;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.util.List;
@@ -14,6 +14,8 @@ import java.util.List;
  * @since 2022-05-10
  */
 public interface SkuService extends IService<Sku> {
+
+    int dcount(String id,Integer num);
     /**
      * 根据推广的分类ID查询该分类下的产品列表
      * @param id

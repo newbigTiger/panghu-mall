@@ -33,15 +33,14 @@ public class MybatisCode {
             mpg.setGlobalConfig(gc);
             // 数据源配置
             DataSourceConfig dsc = new DataSourceConfig();
-            dsc.setUrl("jdbc:mysql://47.98.207.131:3306/shop_user? useUnicode=true&useSSL=false&characterEncoding=utf8");
+            dsc.setUrl("jdbc:mysql://47.98.207.131:3306/shop_order? useUnicode=true&useSSL=false&characterEncoding=utf8");
             dsc.setDriverName("com.mysql.jdbc.Driver");
             dsc.setUsername("root");
             dsc.setPassword("5475096a");
             mpg.setDataSource(dsc);
             // 包配置
             PackageConfig pc = new PackageConfig();
-            pc.setModuleName("panghu-mall");
-            pc.setParent("com.panghu.vip.mall.goods");
+            pc.setParent("com.panghu.vip.mall.order");
             mpg.setPackageInfo(pc);
             // 策略配置
             StrategyConfig strategy = new StrategyConfig();

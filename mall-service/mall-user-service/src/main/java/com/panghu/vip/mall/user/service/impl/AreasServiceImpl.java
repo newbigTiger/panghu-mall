@@ -1,7 +1,7 @@
 package com.panghu.vip.mall.user.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.panghu.vip.mall.model.Areas;
+import com.panghu.vip.mall.user.model.Areas;
 import com.panghu.vip.mall.user.service.AreasService;
 import com.panghu.vip.mall.user.mapper.AreasMapper;
 import org.springframework.stereotype.Service;

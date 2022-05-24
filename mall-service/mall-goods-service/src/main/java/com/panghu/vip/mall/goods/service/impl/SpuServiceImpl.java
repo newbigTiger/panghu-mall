@@ -9,6 +9,7 @@ import com.panghu.vip.mall.goods.mapper.SpuMapper;
 import com.panghu.vip.mall.goods.model.*;
 import com.panghu.vip.mall.goods.service.SkuService;
 import com.panghu.vip.mall.goods.service.SpuService;
+import com.panghu.vip.mall.order.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

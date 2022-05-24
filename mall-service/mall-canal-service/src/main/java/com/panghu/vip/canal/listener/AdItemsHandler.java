@@ -1,7 +1,7 @@
 package com.panghu.vip.canal.listener;
 
 import com.panghu.vip.mall.goods.feign.SkuFeign;
-import com.panghu.vip.mall.goods.model.AdItems;
+import com.panghu.vip.mall.order.model.AdItems;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import top.javatool.canal.client.annotation.CanalTable;

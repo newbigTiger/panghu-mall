@@ -1,7 +1,7 @@
 package com.panghu.vip.mall.user.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.panghu.vip.mall.model.Cities;
+import com.panghu.vip.mall.user.model.Cities;
 
 /**
  * <p>

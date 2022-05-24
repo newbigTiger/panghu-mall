@@ -4,8 +4,8 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.panghu.vip.mall.goods.mapper.AdItemsMapper;
 import com.panghu.vip.mall.goods.mapper.SkuMapper;
-import com.panghu.vip.mall.goods.model.AdItems;
-import com.panghu.vip.mall.goods.model.Sku;
+import com.panghu.vip.mall.order.model.AdItems;
+import com.panghu.vip.mall.order.model.Sku;
 import com.panghu.vip.mall.goods.service.SkuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
@@ -36,6 +36,12 @@ public class SkuServiceImpl extends ServiceImpl<SkuMapper, Sku> implements SkuSe
 
     @Autowired
     private SkuMapper skuMapper;
+
+    @Override
+    public int dcount(String id, Integer num) {
+        int dcount = skuMapper.dcount(id, num);
+        return dcount;
+    }
 
     /**
      * 根据推广的分类ID查询该分类下的产品列表

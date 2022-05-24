@@ -1,6 +1,6 @@
 package com.panghu.vip.mall.goods.service.impl;
 
-import com.panghu.vip.mall.goods.model.AdItems;
+import com.panghu.vip.mall.order.model.AdItems;
 import com.panghu.vip.mall.goods.mapper.AdItemsMapper;
 import com.panghu.vip.mall.goods.service.AdItemsService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

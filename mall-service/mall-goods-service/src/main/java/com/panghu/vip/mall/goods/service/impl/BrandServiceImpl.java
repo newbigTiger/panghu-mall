@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.panghu.vip.mall.goods.mapper.BrandMapper;
-import com.panghu.vip.mall.goods.model.Brand;
+import com.panghu.vip.mall.order.model.Brand;
 import com.panghu.vip.mall.goods.service.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

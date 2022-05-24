@@ -1,6 +1,6 @@
 package com.panghu.vip.mall.user.mapper;
 
-import com.panghu.vip.mall.model.Areas;
+import com.panghu.vip.mall.user.model.Areas;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

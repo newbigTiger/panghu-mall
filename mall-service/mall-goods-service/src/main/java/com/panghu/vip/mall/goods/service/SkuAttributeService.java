@@ -1,8 +1,7 @@
 package com.panghu.vip.mall.goods.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.panghu.vip.mall.goods.model.SkuAttribute;
-import org.apache.ibatis.annotations.Param;
+import com.panghu.vip.mall.order.model.SkuAttribute;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
 package com.panghu.vip.canal.listener;
 
 import com.alibaba.fastjson.JSON;
-import com.panghu.vip.mall.goods.model.Sku;
+import com.panghu.vip.mall.order.model.Sku;
 import com.panghu.vip.mall.page.feign.Pagefeign;
 import com.panghu.vip.mall.search.feign.SkuSearchFeign;
 import com.panghu.vip.mall.search.model.SkuEs;

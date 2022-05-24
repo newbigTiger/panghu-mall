@@ -1,6 +1,6 @@
 package com.panghu.vip.mall.user.mapper;
 
-import com.panghu.vip.mall.model.Address;
+import com.panghu.vip.mall.user.model.Address;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 

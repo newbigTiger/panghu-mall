@@ -1,10 +1,7 @@
 package com.panghu.vip.mall.user.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.panghu.vip.mall.model.Address;
-import com.panghu.vip.mall.model.UserInfo;
-
-import java.util.List;
+import com.panghu.vip.mall.user.model.UserInfo;
 
 /**
  * <p>

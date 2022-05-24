@@ -1,6 +1,6 @@
 package com.panghu.vip.mall.user.mapper;
 
-import com.panghu.vip.mall.model.Cities;
+import com.panghu.vip.mall.user.model.Cities;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

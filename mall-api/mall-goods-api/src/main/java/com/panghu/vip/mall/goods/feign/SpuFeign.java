@@ -1,7 +1,7 @@
 package com.panghu.vip.mall.goods.feign;
 
 import com.panghu.vip.RespResult;
-import com.panghu.vip.mall.goods.model.Product;
+import com.panghu.vip.mall.order.model.Product;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

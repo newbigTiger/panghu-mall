@@ -2,7 +2,7 @@ package com.panghu.vip.mall.user.controller;
 
 
 import com.panghu.vip.RespResult;
-import com.panghu.vip.mall.model.Address;
+import com.panghu.vip.mall.user.model.Address;
 import com.panghu.vip.mall.user.service.AddressService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

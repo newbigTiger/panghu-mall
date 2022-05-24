@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.panghu.vip.mall.goods.mapper.SkuAttributeMapper">
-    <resultMap id="BaseResultMap" type="com.panghu.vip.mall.goods.model.SkuAttribute">
+    <resultMap id="BaseResultMap" type="com.panghu.vip.mall.order.model.SkuAttribute">
         <id column="id" jdbcType="INTEGER" property="id"/>
         <result column="name" jdbcType="VARCHAR" property="name"/>
         <result column="options" jdbcType="VARCHAR" property="options"/>

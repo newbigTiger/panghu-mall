@@ -2,7 +2,7 @@ server:
   port: 8088
 spring:
   application:
-    name: mall-goods
+    name: mall-user-service
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://47.98.207.131:3306/shop_user?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
@@ -23,9 +23,6 @@ spring:
     testOnReturn: false
     poolPreparedStatements: true
     maxOpenPreparedStatements: 20
-  redis:
-    host: 47.98.207.131
-    port: 6379
   cloud:
     nacos:
       config:

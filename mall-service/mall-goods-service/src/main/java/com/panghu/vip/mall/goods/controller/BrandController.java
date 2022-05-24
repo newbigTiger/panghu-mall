@@ -2,7 +2,7 @@ package com.panghu.vip.mall.goods.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.panghu.vip.RespResult;
-import com.panghu.vip.mall.goods.model.Brand;
+import com.panghu.vip.mall.order.model.Brand;
 import com.panghu.vip.mall.goods.service.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
